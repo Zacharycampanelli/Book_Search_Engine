@@ -1,2 +1,20 @@
 import { gql } from '@apollo/client';
-import { me } from '../../../server/schemas/resolvers';
+
+export const GET_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      bookCount
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
+    }
+  }
+`;
